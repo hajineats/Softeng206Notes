@@ -1,0 +1,7 @@
+(working version) compile assignment test code:
+
+javac -cp ./text/hamcrest.jar:./text/junit.jar:../../good.jar:. text/TestFlushLeft.java
+
+run it:
+
+java -cp ./text/hamcrest.jar:text/junit.jar:../../good.jar:. org.junit.runner.JUnitCore text.TestFlushLeft
