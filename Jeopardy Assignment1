@@ -47,3 +47,6 @@ $TEMP >> file.txt doesn't work. it will try run the variable value as a command.
 
 
 https://www.gnu.org/software/sed/manual/sed.html#tail <- good place to find doc for GNU, and sed.
+
+
+touch ${J}hello <- dont do touch $(J)hello or touch $J_hello
