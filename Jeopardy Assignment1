@@ -1,0 +1,38 @@
+Variable assignment should have no spaces
+          VAR=9
+          VAR=$(($VAR+1))
+
+
+If the deletion has not been committed, the command below will restore the deleted file in the working tree.
+         $ git checkout -- <file>
+
+Read a line (-r is for ignoring backslash escapes, -a is for storing result in an array)
+          EX1)
+            IFS=' ' read -ra ADDR <<< "H e l lo;Guys;How;Are;You"
+            for i in "${ADDR[@]}"; do
+                    echo $i
+            done
+
+          EX2)
+            #!/bin/bash
+            IFS="," read -ra line<<<"hello,what,you"
+            echo ${line[0]}
+
+
+When you pass a variable to a function, make sure to put a double quotation to treat it as one argument:
+          #!/bin/bash
+          function takeFirstInArray(){
+                  IFS=',' read -a ADDR <<< "$1" #THIS
+                  for i in ${ADDR[@]} ; do
+                          echo $i
+                  done
+
+          }
+          for i in $(ls categories) ; do
+                  while read -r line ; do
+                          echo $line
+                          takeFirstInArray "$line" #THIS
+                  done < categories/$i
+          done
+          
+  
