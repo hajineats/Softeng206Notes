@@ -35,4 +35,10 @@ When you pass a variable to a function, make sure to put a double quotation to t
                   done < categories/$i
           done
           
-  
+         
+         
+ls -l '^1*', which uses shell glob means line that starts with 1, but grep '^1*', 
+which uses regular expression gets all the files that has zero or more '1'.
+
+wc -l categories/animals | awk '{ print $1 }'
+          prints out the number of lines
