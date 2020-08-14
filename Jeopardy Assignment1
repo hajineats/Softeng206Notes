@@ -50,3 +50,18 @@ https://www.gnu.org/software/sed/manual/sed.html#tail <- good place to find doc 
 
 
 touch ${J}hello <- dont do touch $(J)hello or touch $J_hello
+
+=====================
+http://tldp.org/LDP/abs/html/comparison-ops.html
+http://tldp.org/LDP/abs/html/index.html
+http://tldp.org/LDP/abs/html/string-manipulation.html#SUBSTRINGEX
+
+Get substring of 4 characters starting from 3rd character (awk counts from 1)
+          String="125Stiaewfj"
+          echo | awk '{ print substr("'"${String}"'",3,4)}'
+          ===> output will be 5Sti (4 characters, from 3rd character of String)
+Get substring starting from 2nd character
+          echo | awk '{ print substr("'"${String}"'",2)}'
+
+Check string starts with z:
+          [[ $a == z* ]]   # True if $a starts with an "z" (pattern matching)
